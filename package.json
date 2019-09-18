@@ -5,8 +5,9 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "npm:build && npm run test",
-    "build": "tsc",
-    "lint": "tslint -p tsconfig.json -c tslint.json src/**/*.ts"
+    "build": "tsc && npm run copy",
+    "lint": "tslint -p tsconfig.json -c tslint.json src/**/*.ts",
+    "copy": "ts-node scripts/copy.ts"
   },
   "repository": {
     "type": "git",
@@ -30,7 +31,9 @@
   "homepage": "https://github.com/yhwang/node-red-contrib-ds2-tfjs#readme",
   "devDependencies": {
     "@types/node": "^12.7.5",
-    "node-red": "^0.20.8",
+    "@types/shelljs": "^0.8.5",
+    "shelljs": "^0.8.3",
+    "ts-node": "^8.4.1",
     "tslint": "^5.20.0",
     "typescript": "^3.6.3"
   },
