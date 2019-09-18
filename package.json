@@ -1,0 +1,40 @@
+{
+  "name": "red-contrib-ds2-tfjs",
+  "version": "0.1.0",
+  "description": "Custom Node-Red node for DeepSpeech2",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "npm:build && npm run test",
+    "build": "tsc",
+    "lint": "tslint -p tsconfig.json -c tslint.json src/**/*.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yhwang/node-red-contrib-ds2-tfjs.git"
+  },
+  "keywords": [
+    "node-red",
+    "deepspeech2",
+    "tfjs"
+  ],
+  "node-red": {
+    "nodes": {
+      "deepspeech2": "dist/index.js"
+    }
+  },
+  "author": "yh.wang@ibm.com",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/yhwang/node-red-contrib-ds2-tfjs/issues"
+  },
+  "homepage": "https://github.com/yhwang/node-red-contrib-ds2-tfjs#readme",
+  "devDependencies": {
+    "@types/node": "^12.7.5",
+    "node-red": "^0.20.8",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "node-wav": "0.0.2"
+  }
+}

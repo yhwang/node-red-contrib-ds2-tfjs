@@ -1,0 +1,52 @@
+<script type="text/javascript">
+    RED.nodes.registerType('deepspeech2',{
+        category: 'Models',
+        color: '#F3B567',
+        defaults: {
+            name: {value:''},
+            modelURL: {value:'', required: true, type: 'string'}
+        },
+        inputs:1,
+        outputs:1,
+        icon: 'bridge.png',
+        label: function() {
+            return this.name||'DeepSpeech2';
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="deepspeech2">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i>Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-modelURL"><i class="fa fa-tag"></i>Model URL</label>
+        <input type="text" id="node-input-modelURL" placeholder="modelURL">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="deepspeech2">
+    <p>DeepSpeech2 inference</p>
+
+    <h3>Inputs</h3>
+    <dl class="message-properties">
+        <dt>payload
+            <span class="property-type">buffer</span>
+        </dt>
+        <dd>perform speech to text on the audio buffer</dd>
+    </dl>
+
+    <h3>Outputs</h3>
+    <ol class="node-ports">
+        <dt>transcription
+            <span class="property-type">string</span>
+        </dt>
+        <dd>the transcription</dd>
+    </ol>
+
+    <h3>Details</h3>
+    <p><code>msg.payload</code> is used as the audio content and perform speech
+    to text. The audio shall use waveform audio format at 16 kHz sample rate with
+    16 bits per sample and single channel.
+</script>
