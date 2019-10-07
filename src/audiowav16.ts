@@ -42,7 +42,6 @@ export const downsampleTo16K = (audioBuff: Float32Array, srcSampleRate: number) 
   const ratio = srcSampleRate / TARGET_SAMPLE_RATE;
   const outLen =
       Math.floor((audioBuff.length - FILTER.length) / ratio) + 1;
-  console.log(`audioBuff.length: ${audioBuff.length}, outLen: ${outLen}`);
   const rev = new Float32Array(outLen);
   for (let i = 0, end = audioBuff.length - FILTER.length + 1; i < end; i++) {
     const offset = Math.round(ratio * i);
