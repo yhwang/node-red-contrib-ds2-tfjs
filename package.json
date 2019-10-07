@@ -30,14 +30,15 @@
   },
   "homepage": "https://github.com/yhwang/node-red-contrib-ds2-tfjs#readme",
   "devDependencies": {
-    "@types/node": "^12.7.5",
+    "@types/node": "^12.7.11",
     "@types/shelljs": "^0.8.5",
     "shelljs": "^0.8.3",
     "ts-node": "^8.4.1",
     "tslint": "^5.20.0",
-    "typescript": "^3.6.3"
+    "typescript": "~3.5.3"
   },
   "dependencies": {
+    "ds2-tfjs": "file:../ds2-tfjs",
     "node-wav": "0.0.2"
   }
 }
