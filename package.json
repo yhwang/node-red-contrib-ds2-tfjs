@@ -4,10 +4,11 @@
   "description": "Custom Node-Red node for DeepSpeech2",
   "main": "dist/index.js",
   "scripts": {
-    "test": "npm:build && npm run test",
+    "install": "npm run build",
+    "test": "npm run build && npm run test",
     "build": "tsc && npm run copy",
     "lint": "tslint -p tsconfig.json -c tslint.json src/**/*.ts",
-    "copy": "ts-node scripts/copy.ts"
+    "copy": "node scripts/copy.js"
   },
   "engines": {
     "node": ">=10"
@@ -32,14 +33,12 @@
   },
   "homepage": "https://github.com/yhwang/node-red-contrib-ds2-tfjs#readme",
   "devDependencies": {
-    "@types/node": "~10.14.21",
-    "@types/shelljs": "^0.8.5",
-    "shelljs": "^0.8.3",
-    "ts-node": "^8.4.1",
-    "tslint": "^5.20.0",
-    "typescript": "~3.5.3"
+    "tslint": "^5.20.0"
   },
   "dependencies": {
+    "@types/node": "~10.14.21",
+    "shelljs": "^0.8.3",
+    "typescript": "~3.5.3",
     "ds2-tfjs": "git+https://github.com/yhwang/ds2-tfjs.git#a1b3b2904b17de2b9bd5010d5adc6fff53fa3ac7",
     "node-wav": "0.0.2"
   }
