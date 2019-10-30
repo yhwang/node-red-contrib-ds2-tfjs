@@ -1,5 +1,5 @@
-import * as shell from 'shelljs';
-import * as path from 'path';
+const shell = require('shelljs');
+const path = require('path');
 
 // copy index.html to dist
 shell.cp(
